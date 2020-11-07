@@ -14,11 +14,13 @@ app.get('/', (req, res) => {
   res.send('Welcome to Data Representation and Querying');
 })
 
+
 app.get('/hello/:name', (req, res)=>{
     console.log(req.params.name);
     res.send('Hello' + ' ' + req.params.name);
 })
 
+//JSON data
 app.get('/api/movies', (req, res)=>{
 const mymovies =[
     {
@@ -39,15 +41,17 @@ const mymovies =[
 });
 
 
-
+//get index
 app.get('/test', (req, res)=>{
     res.sendFile(__dirname + '/index.html');
 })
 
+//get names
 app.get('/name', (req, res)=>{
     res.send('Hello ' + req.query.fname + ' ' + req.query.lname);
 })
 
+//post names
 app.post('/name', (req, res)=>{
     res.send('Hello ' + req.body.fname + ' ' +  req.body.lname);
 })
